@@ -3,9 +3,11 @@ import { IoClose } from "react-icons/io5";
 
 import css from "./ImageModal.module.css";
 
-import { Photo } from "../App/App";
+import { Photo } from "../../types";
 
-const customStyles = {
+import { ImageModalProps } from "../../types";
+
+const customStyles: Modal.Styles = {
   content: {
     top: "50%",
     left: "50%",
@@ -26,13 +28,6 @@ const customStyles = {
 };
 
 Modal.setAppElement("#root");
-
-interface ImageModalProps {
-  images: Photo[];
-  selectedImageId: string | null;
-  isOpen: boolean;
-  onRequestClose: () => void;
-}
 
 function ImageModal({ images, selectedImageId, isOpen, onRequestClose }: ImageModalProps) {
   const selectedImage = images.find((image) => image.id === selectedImageId);

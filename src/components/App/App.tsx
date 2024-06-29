@@ -11,27 +11,7 @@ import ImageModal from "../ImageModal/ImageModal";
 
 import { getPhotos } from "../../images-api";
 
-export interface Photo {
-  id: string;
-  alt_description: string;
-  likes: number;
-  urls: {
-    small: string;
-    regular: string;
-  };
-  user: {
-    name: string;
-    portfolio_url: string;
-    links: {
-      html: string;
-    }
-  };
-}
-
-interface GetPhotosResponse {
-  results: Photo[];
-  total_pages: number;
-}
+import { Photo } from "../../types";
 
 
 function App() {
@@ -78,7 +58,7 @@ function App() {
         setIsLoading(true);
         setIsError(false);
 
-        const data: GetPhotosResponse = await getPhotos(searchQuery, page);
+        const data = await getPhotos(searchQuery, page);
         const results = data.results;
 
         setPhotos((prevState) => [...prevState, ...results]);

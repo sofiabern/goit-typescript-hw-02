@@ -1,10 +1,7 @@
 
 import css from "./ErrorMessage.module.css";
 
-interface ErrorMessageProps {
-  message: string
-}
-
+import { ErrorMessageProps } from "../../types";
 
 function ErrorMessage({ message }: ErrorMessageProps) {
 

@@ -4,10 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 import css from "./SearchBar.module.css";
 
-interface SearchBarProps {
-  onSearch: (value: string) => void;
-}
-
+import { SearchBarProps } from "../../types";
 
 function SearchBar({ onSearch }: SearchBarProps) {
   const handleSubmit = (

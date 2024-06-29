@@ -1,13 +1,6 @@
 import css from "./ImageCard.module.css";
 
-interface ImageCardProps{
-  image: {
-    urls: {
-      small: string;
-    };
-    alt_description: string;
-  };
-}
+import { ImageCardProps } from "../../types";
 
 function ImageCard({image}: ImageCardProps) {
   return (

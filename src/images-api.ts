@@ -4,8 +4,15 @@ const KEY = "nofCwJJEIf_NmETCA57-Sn9Oe4FFy62g9hNr5Q6NX2E"
 
 axios.defaults.baseURL = "https://api.unsplash.com";
 
-export const getPhotos = async (value, currentPage) => {
-  const response = await axios.get("/search/photos", {
+import { Photo } from "./types";
+
+interface ApiResponse {
+  results: Photo[];
+  total_pages: number;
+}
+
+export const getPhotos = async (value: string, currentPage: number): Promise<ApiResponse> => {
+  const response = await axios.get<ApiResponse>("/search/photos", {
     params: {
       query: value,
       page: currentPage,

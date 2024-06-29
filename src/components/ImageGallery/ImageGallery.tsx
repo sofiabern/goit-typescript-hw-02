@@ -2,12 +2,9 @@ import ImageCard from "../ImageCard/ImageCard";
 
 import css from "./ImageGallery.module.css";
 
-import { Photo } from "../App/App";
+import { Photo } from "../../types";
 
-interface ImageGalleryProps{
-  images: Photo[];
-  onImageClicked: (imageId: string) => void
-}
+import { ImageGalleryProps } from "../../types";
 
 function ImageGallery({ images, onImageClicked }: ImageGalleryProps) {
   return (
